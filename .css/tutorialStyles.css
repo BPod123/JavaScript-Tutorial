@@ -1,0 +1,42 @@
+/* Ben Podrazhansky */
+body {
+    font-family:monospace;
+}
+header h1  {
+    text-align:center;
+    text-decoration: underline;
+    font-family:fantacy;
+}
+header h4 {
+    text-align:center;
+}
+.tableOfContents iframe    {
+    float:left;
+    background-color:white;
+    border:none;
+    max-width:18%;
+}
+
+h2  {
+    text-decoration: underline;
+    color:yellow;
+}
+table, th, td   {
+    border-collapse:collapse;
+}
+tr  {
+    border: 1px solid white;
+}
+ul.horizontalList {
+    list-style-type: none;
+    margin: 0;
+    padding: 10;
+    overflow: hidden;
+}
+ul.horizontalList li {
+    float:left;
+    display: block;
+    text-align: center;
+    padding: 16px;
+    border:1px solid grey;
+}

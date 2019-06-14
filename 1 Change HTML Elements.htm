@@ -1,0 +1,83 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+</head>
+
+<body>
+    <header>
+        <h1>1 Editing HTML Elements</h1>
+        <h4>Next:</h4><h4> next</h4>
+        <hr>
+    </header>
+    <aside class="tableOfContents">
+        <iframe src="tableOfContents.htm" style="height:110vw;"></iframe>
+    </aside>
+    <h2>Changing The innerHtml of elements</h2>
+    <p> You can use JavaScript to put commands into a &lt;button&gt; to make it execute a task when clicked.
+        You can make the button edit the text within an html element with a given id.
+    </p>
+    <pre>Consider the following code and its following implementation:
+            &lt;p id="targetParagraph"&gt; This paragraph will be changed when a button is pressed. &lt;/p&gt;
+
+            &lt;!-- Button to change text --&gt;
+            &lt;button type="button"
+
+            onClick='document.getElementById("targetParagraph").innerHTML = "This paragraph has been edited with JavaScirpt."'&gt;
+            
+            Change Text
+
+            &lt;/button&gt;
+
+            
+            &lt;!-- Button to revert text back --&gt;
+            
+            &lt;button type="button"
+            
+            onClick='document.getElementById("targetParagraph").innerHTML = "This paragraph will be changed when a button is pressed."'&gt;
+            
+            Change text back
+            
+            &lt;/button&gt;
+        </pre>
+    <p id="targetParagraph"> This paragraph will be changed when a button is pressed. </p>
+    <!-- Button to change text -->
+    <button type="button"
+        onClick='document.getElementById("targetParagraph").innerHTML = "This paragraph has been edited with JavaScirpt."'>
+        Change Text
+    </button>
+    <!-- Button to revert text back -->
+    <button type="button"
+        onClick='document.getElementById("targetParagraph").innerHTML = "This paragraph will be changed when a button is pressed."'>
+        Change text back
+    </button>
+    <br>
+    <h3><ins>'document'</ins></h3>
+    <p>'document' is a reference to the <strong>this</strong> document.</p>
+    <h3><ins>getElementById("id string")</ins></h3>
+    <p> getElementById("id string") is used to find elements with the id as a parameter. </p>
+    <br>
+    <h3><ins>innerHTML</ins></h3>
+    <p>innerHTML is the content within an element. The innerHTML of a paragraph is the text within.
+        The innerHTML of an ordered list &lt;ol&gt; would be the list items &lt;li&gt; within the list.<br>
+        Getting the calling 'document.getElementById("id of element").innerHTML' returns a reference to the innerHTML of
+        an element with the passed in id. You can then manipulate the innerHTML however you want.
+    </p>
+    <hr>
+    
+    <h2> Change attributes of HTML elements </h2>
+    <p> Similar to the innerHTML of an element, to access an attribute of an element, instead of <br>
+    'document.getElementBy*<sub>means of finding element</sub>.innerHTML, just do .attribute.<br>
+    For example:
+    </p>
+    <img id="Myimage" src="images/mountain.jpeg" alt="image">
+    <br>
+    <button type="button" onClick='document.getElementById("Myimage").src = "images/RonaldReaganMachineGun.jpg"'>Awesome Button</button>
+
+</body>
+
+</html>
