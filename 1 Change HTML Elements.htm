@@ -11,13 +11,18 @@
 <body>
     <header>
         <h1>1 Editing HTML Elements</h1>
-        <h4>Next:</h4><h4> next</h4>
+        <h4><ins>Next:</ins> <a href="whereToPlaceJS.htm"> How to include JavaScript on your Page </a></h4>
         <hr>
     </header>
-    <aside class="tableOfContents">
-        <iframe src="tableOfContents.htm" style="height:110vw;"></iframe>
-    </aside>
-    <h2>Changing The innerHtml of elements</h2>
+    <section class="navigatePage">
+        <h2> Topics </h2>
+        <ul>
+            <li><a href="#innerHTML"> Changing innerHTML of Elements</a></li>
+            <li><a href="#attributes"> Change attributes of HTML Elements</a></li>
+            <li><a href="#styles">Change Style of HTML Elements</a></li>
+        </ul>
+    </section>
+    <h2 id="innerHTML">Changing The innerHtml of Elements</h2>
     <p> You can use JavaScript to put commands into a &lt;button&gt; to make it execute a task when clicked.
         You can make the button edit the text within an html element with a given id.
     </p>
@@ -68,16 +73,48 @@
         an element with the passed in id. You can then manipulate the innerHTML however you want.
     </p>
     <hr>
-    
-    <h2> Change attributes of HTML elements </h2>
+
+    <h2 id="attributes"> Change Attributes of HTML Elements </h2>
     <p> Similar to the innerHTML of an element, to access an attribute of an element, instead of <br>
-    'document.getElementBy*<sub>means of finding element</sub>.innerHTML, just do .attribute.<br>
-    For example:
+        'document.getElementBy*<sub>means of finding element</sub>.innerHTML, just do .attribute.<br>
+        For example:
     </p>
+    <pre>
+            &lt;img id="Myimage" src="images/mountain.jpeg" alt="image"&gt;
+            &lt;br&gt;
+            &lt;button type="button" onClick='document.getElementById("Myimage").src = "images/RonaldReaganMachineGun.jpg"'&gt;
+            Awesome Button&lt;/button&gt;
+    </pre>
     <img id="Myimage" src="images/mountain.jpeg" alt="image">
     <br>
-    <button type="button" onClick='document.getElementById("Myimage").src = "images/RonaldReaganMachineGun.jpg"'>Awesome Button</button>
+    <button type="button" onClick='document.getElementById("Myimage").src = "images/RonaldReaganMachineGun.jpg"'>
+        Awesome Button</button>
+    <hr>
 
+    <h2 id="styles"> Change Style of HTML Elements</h2>
+    <p> Change the style of an html element with<br>
+        element.style.property = value<br>
+        Consider the following examples:
+    </p>
+    <pre>
+            &lt;p id="changeColor"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;/p&gt;
+            &lt;button onClick='document.getElementById("changeColor").style.color = "blue";'&gt; Blue &lt;/button&gt;
+            &lt;button onClick='document.getElementById("changeColor").style.color = "green";'&gt; Green &lt;/button&gt;
+            &lt;button onClick='document.getElementById("changeColor").style.color = "white";'&gt; White &lt;/button&gt; 
+    </pre>
+    <p id="changeColor"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    <button onClick='document.getElementById("changeColor").style.color = "blue";'> Blue </button>
+    <button onClick='document.getElementById("changeColor").style.color = "green";'> Green </button>
+    <button onClick='document.getElementById("changeColor").style.color = "white";'> White </button>
+    
+    <pre>
+            &lt;p id="show/hide"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;/p&gt;
+            &lt;button onClick="document.getElementById('show/hide').style.display = 'block';"&gt; Show &lt;/button&gt;
+            &lt;button onClick="document.getElementById('show/hide').style.display = 'none';"&gt; Hide &lt;/button&gt;
+    </pre>    
+    <p id="show/hide"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    <button onClick="document.getElementById('show/hide').style.display = 'block';"> Show </button>
+    <button onClick="document.getElementById('show/hide').style.display = 'none';"> Hide </button>
 </body>
 
 </html>

@@ -1,42 +1,74 @@
 /* Ben Podrazhansky */
 body {
-    font-family:monospace;
-}
-header h1  {
-    text-align:center;
-    text-decoration: underline;
-    font-family:fantacy;
-}
-header h4 {
-    text-align:center;
-}
-.tableOfContents iframe    {
-    float:left;
-    background-color:white;
-    border:none;
-    max-width:18%;
+    font-family: monospace;
 }
 
-h2  {
+header h1 {
+    text-align     : center;
     text-decoration: underline;
-    color:yellow;
+    font-family    : fantacy;
 }
-table, th, td   {
-    border-collapse:collapse;
+
+header h4 {
+    text-align: center;
 }
-tr  {
+
+.tableOfContents iframe {
+    float           : left;
+    background-color: white;
+    border          : none;
+    max-width       : 18%;
+}
+
+.navigatePage {
+    float           : right;
+    background-color: white;
+    color           : black;
+}
+
+.navigatePage a:active {
+    color: lightblue;
+}
+
+.navigatePage a:hover {
+    color: yellow;
+}
+
+.navigatePage a:visited {
+    color: rgb(175, 17, 175);
+}
+
+.navigatePage h2 {
+    color     : black;
+    text-align: center;
+}
+
+h2 {
+    text-decoration: underline;
+    color          : yellow;
+}
+
+table,
+th,
+td {
+    border-collapse: collapse;
+}
+
+tr {
     border: 1px solid white;
 }
+
 ul.horizontalList {
     list-style-type: none;
-    margin: 0;
-    padding: 10;
-    overflow: hidden;
+    margin         : 0;
+    padding        : 10;
+    overflow       : hidden;
 }
+
 ul.horizontalList li {
-    float:left;
-    display: block;
+    float     : left;
+    display   : block;
     text-align: center;
-    padding: 16px;
-    border:1px solid grey;
+    padding   : 16px;
+    border    : 1px solid grey;
 }

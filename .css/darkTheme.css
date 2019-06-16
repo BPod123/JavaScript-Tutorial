@@ -2,3 +2,5 @@
 body {background-color:black;
     color:white;
 }
+a:active    {color:yellow;}
+a:link  {color:rgb(0, 174, 255);}
