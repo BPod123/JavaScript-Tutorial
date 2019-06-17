@@ -1,0 +1,143 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <style>
+        .function {
+            color: rgb(230, 16, 230);
+        }
+
+        .name {
+            color: rgb(255, 50, 50);
+        }
+
+        .code {
+            color: greenyellow;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            document.getElementById("functionExample").innerHTML = "This paragraph has been changed.";
+        }
+        function undoMyFunction() {
+            document.getElementById("functionExample").innerHTML = "Original paragraph";
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>2 Where to Place JS</h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="1 Change HTML Elements.htm"><ins>1 Change HTML Elements</ins></a>      <ins>Next:</ins> <a href = "3 Output.htm"><ins>3 Output</ins></a></pre>
+        </h4>
+        <hr>
+    </header>
+    <aside class="navigatePage">
+        <h2> Topics </h2>
+        <ul>
+            <li><a href="#scriptTag"> The &lt;script&gt; tag </a></li>
+        </ul>
+    </aside>
+    <hr>
+    <h2 id="inlineJS"> Inline JS: Defining JavaScript for Individual Elements </h2>
+    <p> You can put JavaScript into individual elements on a page. This is only recomended for small tasks.<br>
+        For example: Changing the text in a paragraph with a button:</p>
+    <pre>
+            &lt;p id="inlineJSExample"&gt; Lorem ipsum dolor sit amet, consectetur adipiscing elit. &lt;/p&gt;
+            &lt;button onClick="document.getElementById('inlineJSExample').innerHTML = 'The button changed this paragraph'"&gt; Change text &lt;/button&gt;
+            &lt;button onClick="document.getElementById('inlineJSExample').innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'"&gt; Reset &lt;/button&gt;
+    </pre>
+    <p id="inlineJSExample"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+    <button onClick="document.getElementById('inlineJSExample').innerHTML = 'The button changed this paragraph'"> Change
+        text </button>
+    <button
+        onClick="document.getElementById('inlineJSExample').innerHTML = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'">
+        Reset </button>
+    <hr>
+
+    <h2 id="scriptTag"> Internal JS: The &lt;script&gt; tag </h2>
+    <p> To insert JavaScript into your HTML with the &lt;script&gt; tag. You can use &lt;script&gt; to define functions
+        in the &lt;head&gt; of your page, or put it in the &lt;body&gt; to have it executed at runtime when it is
+        loaded.
+    </p>
+    <h3> Functions </h3>
+    <p> Functions are more efficient than inlineJS when the code is more complex than one statement, or it is used
+        multiple times. </p>
+    <pre>
+&lt;head&gt;
+    &lt;script&gt;
+        <span style="color:rgb(230, 16, 230);">function</span> myFunction() {
+            document.getElementById("functionExample").innerHTML = "This paragraph has been changed."
+        }
+        <span style="color:rgb(230, 16, 230);">function</span> undoMyFunction(){
+            document.getElementById("functionExample").innerHTML = "Original paragraph";
+        }
+    &lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;p id="functionExample"&gt; Original paragraph &lt;/p&gt;
+    &lt;button onClick="myFunction()"&gt; invoke myFunction() &lt;/button&gt;
+    &lt;button onClick="undoMyFunction"&gt; invoke undoMyFunction &lt;/button&gt;
+&lt;/body&gt;
+    </pre>
+    <p id="functionExample"> Original paragraph </p>
+    <button onClick="myFunction()"> invoke myFunction() </button>
+    <button onClick="undoMyFunction()"> invoke undoMyFunction </button>
+    <br>
+    <h3 style="text-decoration:underline;"> Building a function:</h3>
+    <pre><h4><span style="font-size:150%;"> <span class="function">function</span> <span class="name">functionName</span>()<span class="code">{
+                code
+            }
+            </span></span></pre>
+    </h4>
+    <p> A <span class="function">function</span> contains 4 parts:
+        <ol>
+            <li class="function"> The function keyword </li>
+            <dd class="function"> - function declares the following code as a function
+            </dd>
+            <li class="name"> The name of the function</li>
+            <dd class="name"> - The name is what will be called whenever the function is invoked
+            </dd>
+            <li> The parameters () </li>
+            <dd> - Within the parentheses are the parameters for the function. A function does not need parameters, but
+                it
+                must have parentheses.</dd>
+            <li class="code"> The {code}</li>
+            <dd class="code"> The code for the function is contained in curly braces {} that follow the
+                parameters </dd>
+        </ol>
+    </p>
+    <hr>
+    <h2> External JavaScript: Using code in another file </h2>
+    <p> You can Use the &lt;script&gt; tag to execute code in JavaScript .js files by setting the <span
+            style="color:rgb(187, 236, 255);">src</span> attribute to the .js file.</p>
+    <pre> <h3> changeTextExample.js: </h3>
+    function changeText(){
+        document.getElementById("externalJSExample").innerHTML = "This text has been changed.";
+    }
+    function undoChangeText(){
+        document.getElementById("externalJSExample").innerHTML = "Original text";
+    }</pre>
+    <h3> Webpage that uses changeTextExample.js: </h3>
+    <pre>
+        &lt;script&gt; src="changeTextExample.js"&gt; &lt;/script&gt;
+        &lt;p id="externalJSExample"&gt; Original text
+        &lt;button id="invokeChangeTextButton" onClick="changeText()"&gt; Change Text &lt;/button&gt;
+        &lt;button onClick="undoChangeText()"&gt; Reset &lt;/button&gt;
+    </pre>
+    <script src=".js/changeTextExample.js"></script>
+    <p id="externalJSExample"> Original text</p>
+    <button id="invokeChangeTextButton" onClick="changeText()"> ChangeText </button>
+    <button onClick="undoChangeText()"> Reset </button>
+    <p> The &lt;script&gt; src="changeTextExample.js"&gt; &lt;/script&gt; can go anywhere in the head or body of the
+        page, for organizational purposes it is nice to
+        put it in the head or above the line it is used if it is only used once.
+</body>
+
+</html>

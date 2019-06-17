@@ -4,3 +4,4 @@ body {background-color:black;
 }
 a:active    {color:yellow;}
 a:link  {color:rgb(0, 174, 255);}
+a:visited {color:rgb(233, 39, 233);}

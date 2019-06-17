@@ -26,16 +26,15 @@ header h4 {
     color           : black;
 }
 
-.navigatePage a:active {
-    color: lightblue;
+.navigatePage a:link {
+    color: blue;
 }
 
 .navigatePage a:hover {
-    color: yellow;
+    color: green;
 }
-
 .navigatePage a:visited {
-    color: rgb(175, 17, 175);
+    color: purple;
 }
 
 .navigatePage h2 {
