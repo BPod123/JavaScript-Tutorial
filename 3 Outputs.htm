@@ -1,0 +1,143 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>3 Outputs</title>
+    <script>
+        function changeText() {
+            document.getElementById("innerHTMLParagraph").innerHTML = "<b>Cha</b><i>nge</i><ins>d t</ins><del>ext</del>"
+        }
+        function undoChangeText() {
+            document.getElementById("innerHTMLParagraph").innerHTML = "Original Text"
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1> 3 Outputs </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="2 Where to Place JS.htm"><ins>2 Where to Place JS</ins></a>      <ins>Next:</ins> <a href = ".htm"><ins>4 </ins></a></pre>
+        </h4>
+        <hr>
+    </header>
+    <aside class="navigatePage">
+        <h2> Topics </h2>
+        <ul>
+            <li><a href="#innerHTML">innerHTML</a></li>
+            <li><a href="#write">document.write()</a></li>
+            <li> <a href="#alert">window.alert()</a></li>
+            <li><a href="#log"> console.log() </a></li>
+        </ul>
+    </aside>
+    <h2 id="inputTypes"> Different ways to add to a page </h2>
+    <ul>
+        <li><a href="#innerHTML">innerHTML</a></li>
+        <dd> - Editing the content of an element </dd>
+        <li><a href="#write">document.write()</a></li>
+        <dd> - Writing to the document </dd>
+        <li> <a href="#alert">window.alert()</a></li>
+        <dd> - Writing to an alert box </dd>
+        <li><a href="#log"> console.log() </a></li>
+        <dd> - Writing into the browser </dd>
+    </ul>
+    <hr>
+    <h2 id="innerHTML">innerHTML</h2>
+    <p> innerHTML is the text content in elements. This applies to any element that can contain text including
+        paragraphs,
+        headings, blocks, list items, ...
+    </p>
+    <section class="example">
+        <h3> Editing the innerHTML of a paragraph </h3>
+        <pre>
+            &lt;script&gt;
+            function changeText() {
+                document.getElementById("innerHTMLParagraph").innerHTML = "&lt;b&gt;Cha&lt;/b&gt;&lt;i&gt;nge&lt;/i&gt;&lt;ins&gt;d t&lt;/ins&gt;&lt;del&gt;ext&lt;/del&gt;"
+            }
+            function undoChangeText() {
+                document.getElementById("innerHTMLParagraph").innerHTML = "Original Text"
+            }
+        &lt;/script&gt;
+        &lt;p id="innerHTMLParagraph"&gt; Original &lt;span style="font-family:cursive;"&gt;Text&lt;/span&gt; &lt;/p&gt;
+        &lt;button onClick="changeText()"&gt; Change Text &lt;/button&gt;
+        &lt;button onClick="undoChangeText()"&gt; Reset &lt;/button&gt;
+    </pre>
+        <p id="innerHTMLParagraph"> Original <span style="font-family:cursive;">Text</span> </p>
+        <button onClick="changeText()"> Change Text </button>
+        <button onClick="undoChangeText()"> Reset </button>
+        <pre><hr>
+    </pre>
+        <h3> Editing the innerHTML of a block </h3>
+        <pre>
+&lt;div id="test"&gt;
+&lt;/div&gt;
+&lt;button onClick="document.getElementById('test').innerHTML = '&lt;h1&gt; Test &lt;/h1&gt;'"&gt; Change Section &lt;/button&gt;
+&lt;button onClick="document.getElementById('test').innerHTML = ''"&gt; Reset &lt;/button&gt;
+    </pre>
+        <div id="test">
+        </div>
+        <button onClick="document.getElementById('test').innerHTML = '<h1> Test </h1>'"> Change Section </button>
+        <button onClick="document.getElementById('test').innerHTML = ''"> Reset </button>
+    </section>
+    <hr>
+    <section id="write">
+        <h2> document.write() </h2>
+        <p> Using the write funciton, you can write information to a file, but beware when using. If you write to an
+            HTML document that has already been loaded, you will overwrite the page.</p>
+        <div class="example">
+            <pre>
+                    &lt;p&gt; 1 + 1 = &lt;/p&gt;
+                    &lt;script&gt;
+                        document.write(1 + 1);
+                    &lt;/script&gt;
+                </pre>
+            <p>1 + 1 = </p>
+            <script>
+                document.write(1 + 1);
+            </script>
+        </div>
+    </section>
+    <hr>
+    <section id="alert">
+        <h2> window.alert() </h2>
+        <p> Using window.alert() you can make a window pop up within the page with a message.<br>
+            Refresh this page to see the example in action.
+        </p>
+        <div class="example">
+            <pre>
+                &lt;script&gt;
+                    window.alert('Make pop-up messages with window.alert()');
+                &lt;/script&gt;
+                <hr>
+            </pre>
+            <script>
+                window.alert('Make pop-up messages with window.alert()')
+            </script>
+        </div>
+
+    </section>
+    <section id="log">
+        <h2> console.log() </h2>
+        <p> Press F12 to view the HTML of a web page. You can get to the console from there.<br>
+            Using console.log() You can send messages to the console.</p>
+        <div class = "example">
+            <pre>
+                &lt;script&gt;
+                    console.log('This is a log. 5+10=' 5+10);
+                    console.log(5+10);
+                &lt;/script&gt;
+                </pre>
+            <script>
+                console.log('This is a log. 5+10=');
+                console.log(5+10);
+            </script>
+        </div>
+
+    </section>
+</body>
+
+</html>
