@@ -1,0 +1,93 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>4 Statements</title>
+</head>
+
+<body>
+    <header>
+        <h1> 4 Statements </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="3 Outputs.htm">3 Outputs</a>      <ins>Next:</ins> <a href = ".htm">5</a></pre>
+        </h4>
+        <hr>
+    </header>
+    <aside class="navigatePage">
+        <h2> Topics </h2>
+        <ul>
+            <li><a href="#statements">Statements</a></li>
+            <li><a href="#var">Variables</a></li>
+            <li><a href="#practices">Good Practices</a></li>
+        </ul>
+    </aside>
+    <section id="statements">
+        <h2> What is a statement </h2>
+        <p> A computer program is composed of man statements. A statement is an instruction. Each instruction is
+            sepearated by a semicolon ';'</p>
+        <code class="example">
+                    document.getElementById('example').innerHTML = 'This is an example statement';<br>
+                    document.getElembentById('another example').innerHTML = 'This is another statement';
+            </code>
+    </section>
+    <hr>
+    <section id="var">
+        <h2> Variables</h2>
+        <p> A variable stores information. You can store information in a variable and recall it later. Delare a
+            variable with the keyword 'var'. 'var' is similar to 'auto' in C++.</p>
+        <div style="background-color:white; width:50%">
+            <code class="example">
+            &lt;script&gt;<br>
+                var n1, n2, n3;<br>
+                n1 = 1;<br>
+                n2 = 2;<br>
+                n3 = 3;<br>
+                document.write(n1 + n2 + n3);<br>
+            &lt;/script&gt;<br>
+                <hr><br>
+            <script>
+                var n1, n2, n3;
+                n1 = 1;
+                n2 = 2;
+                n3 = 3;
+                document.write(n1 + n2 + n3);
+            </script>
+            </code>
+        </div>
+    </section>
+    <section id="practices">
+        <h2> Good Practices </h2>
+        <h3 style="text-decoration: underline;"> Using Whitespace </h3>
+        <p> Using spaces to space out code makes it more readable and less of a hassel.</p>
+        <div class="example">
+            <h4> Which of these is more readable?</h4>
+            <code>
+                <pre>&lt;script&gt;var a,b,c;a=5;b=10;c=15;document.write(a+b+c);&lt;/script&gt;</pre>
+
+                or<pre>
+&lt;script&gt;
+    var a, b, c;
+    a = 5;
+    b = 10;
+    c = 15;
+    document.write(a + b + c); 
+&lt;/script&gt;
+<hr style="width:25%;"></pre>
+            </code>
+<p> You can even split up statements that edit parts of elements </p>
+<div class = "example">
+    <code>
+        document.getElementById('example').innerHTML = <br>
+        <pre>'After strings can only be on one line, but after the equals sign you can start a new line.';</pre>
+    </code>
+</div>
+
+        </div>
+    </section>
+</body>
+
+</html>

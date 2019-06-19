@@ -44,6 +44,7 @@ header h4 {
 .example    {
     background-color:white;
     color:black;
+    width:50%;
 }
 .example hr {
     width:50%;
