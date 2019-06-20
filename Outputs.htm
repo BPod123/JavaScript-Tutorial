@@ -21,7 +21,7 @@
     <header>
         <h1> 3 Outputs </h1>
         <h4>
-            <pre><ins>Previous:</ins> <a href="2 Where to Place JS.htm"><ins>2 Where to Place JS</ins></a>      <ins>Next:</ins> <a href = "4 Statements.htm">4 Statements</a></pre>
+            <pre><ins>Previous:</ins> <a href="Where to Place JS.htm"><ins>2 Where to Place JS</ins></a>      <ins>Next:</ins> <a href = "Statements.htm">4 Statements</a></pre>
         </h4>
         <hr>
     </header>
@@ -85,18 +85,21 @@
     </section>
     <hr>
     <section id="write">
-        <h2> document.write() </h2>
-        <p> Using the write funciton, you can write information to a file, but beware when using. If you write to an
-            HTML document that has already been loaded, you will overwrite the page.</p>
+        <h2> document.write() and document.writeln </h2>
+        <p> Using the write() funciton, you can write information to a file, but beware when using. If you write to an
+            HTML document that has already been loaded, you will overwrite the page.<br>
+        To be more clear, you will not overwrite the file, you will just overwrite what is being viewed in the browser.</p>
         <div class="example">
             <pre>
-                    &lt;p&gt; 1 + 1 = &lt;/p&gt;
-                    &lt;script&gt;
-                        document.write(1 + 1);
-                    &lt;/script&gt;
+
+&lt;script&gt;
+    document.write('1 + 1 = ');
+    document.write(1 + 1);
+&lt;/script&gt;
                 </pre>
-            <p>1 + 1 = </p>
+            <hr><br>
             <script>
+                document.write('1 + 1 = ');
                 document.write(1 + 1);
             </script>
         </div>
@@ -109,10 +112,9 @@
         </p>
         <div class="example">
             <pre>
-                &lt;script&gt;
-                    window.alert('Make pop-up messages with window.alert()');
-                &lt;/script&gt;
-                <hr>
+&lt;script&gt;
+    window.alert('Make pop-up messages with window.alert()');
+&lt;/script&gt;
             </pre>
             <script>
                 window.alert('Make pop-up messages with window.alert()')
@@ -124,7 +126,7 @@
         <h2> console.log() </h2>
         <p> Press F12 to view the HTML of a web page. You can get to the console from there.<br>
             Using console.log() You can send messages to the console.</p>
-        <div class = "example">
+        <div class="example">
             <pre>
                 &lt;script&gt;
                     console.log('This is a log. 5+10=' 5+10);
@@ -133,7 +135,7 @@
                 </pre>
             <script>
                 console.log('This is a log. 5+10=');
-                console.log(5+10);
+                console.log(5 + 10);
             </script>
         </div>
 

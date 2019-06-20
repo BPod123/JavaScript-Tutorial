@@ -1,0 +1,140 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>5 Syntax</title>
+</head>
+
+<body>
+    <header>
+        <h1> 5 Syntax </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Statements.htm">4 Statements</a>      <ins>Next:</ins> <a href = ".htm">6</a></pre>
+        </h4>
+        <hr>
+    </header>
+    <aside class="navigatePage">
+        <h2> Topics </h2>
+        <ul>
+            <li><a href='#primitives'>Primitives </a></li>
+            <li><a href='#operators'>Operators</a></li>
+            <li><a href='#expressions'>Expressions</a></li>
+            <li><a href='#comments'>Comments</a></li>
+        </ul>
+    </aside>
+    <section id='primitives'>
+        <h2> Primitives </h2>
+        <p> At a surface level and for simplicity, we will say that JavaScript has two primitive data types: strings and
+            numbers. There are more, but I will elaborate on that later. Strings are defined in single or double quotes.
+            numbers are defines as decimal or whole numbers not in quotes.</p>
+        <div class='example'>
+            <pre>
+Number:
+<hr>
+var a, b, c;
+a = 1;
+b = 2;
+c = 3;
+<hr style='width:100%'>
+Strings
+<hr>
+var a, b, c;
+a = 'This is a string'
+b = "This is also a string"
+c = '1'
+<hr style='width:100%'>
+</pre>
+        </div>
+    </section>
+    <section id='operators'>
+        <h2> Operators </h2>
+        <p> JavaScript Operators are:</p>
+        <ul>
+            <li>+</li>
+            <li>-</li>
+            <li>*</li>
+            <li>/</li>
+            <li>.</li>
+        </ul>
+        <p> The first four operators are pretty basic. The last one,'.', is the dot operator. It is used to invoke
+            funcitons or get attributes of objects. For Example:</p>
+        <div class='example'>
+            <pre>
+                &lt;p id='example'&gt; Original Text &lt;/p&gt;
+&lt;button 
+onClick="document.getElementById('example')<mark>.</mark>innerHTML = 'This is a test'"&gt; Use <mark>.</mark> operator
+&lt;/button&gt;
+&lt;button onClick="document.getElementById('example')<mark>.</mark>innerHTML = 'Original Text'"&gt;Reset&lt;/button&gt;
+<hr>
+</pre>
+            <p id='example'> Original Text</p>
+            <button onClick="document.getElementById('example').innerHTML = 'This is a test'">Use
+                <mark>.</mark> operator
+            </button>
+            <button onClick="document.getElementById('example').innerHTML = 'Original Text'">Reset</button>
+        </div>
+    </section>
+    <section id='expressions'>
+        <h2> Expressions </h2>
+        <div class='example'>
+            <pre>
+    Adding numbers together
+document.write(5 + 5);
+<hr>
+<script> document.write(5 + 5);</script>
+<hr style='width:100%'>
+    Adding strings together (this is called concatenation and is a buzz word in low level programming classes)
+document.write('String 1 ' + 'String 2');
+<hr>
+<script>document.write('String 1' + 'String 2');</script>
+<hr style='width:100%'>
+        </pre>
+        </div>
+        <p> JavaScript is a weakly typed language. That means that if you add a string with a number, it will treat the
+            number as a string. </p>
+        <div class='example'>
+            <pre>
+document.write(1 + '00');
+<hr>
+<script>document.write(1 + '00');</script>
+<hr style='width:100%;'>
+document.write('1' + 00);
+<hr>
+<script>document.write('1' + 00);</script>
+This was 10 and not 100 because 00 = 0 and 00 was entered as a number.
+            </pre>
+        </div>
+    </section>
+    <section id='comments'>
+        <h2> Comments </h2>
+        <p> Use to make your code more readable. Comments in JavaScript work the same way as comments in most C
+            languages.<br>
+            // Coments out the rest of a line<br>
+            /* A slash followed by a star comments everything after it until a */ ends it. This can be used for
+            multi-line coments or inline comments.</p>
+        <div class='example' style='width:75%;'>
+            <pre>
+// A few examples of comments not in action, because they are ignored at runtime.
+
+document./* Coments are ignored during runtime.*/write("Coments won't mess up this code.");
+
+document.write('Puting coments in the middle of a line of code is not good practice'); // The end of the line is better.
+
+// document.writeln('This code will not show up because it has been commented out.');
+
+/*document.writeln('This is useful if you are temporarily removing code without deleting it.');*/
+<hr style='width:75%'>
+<script>
+// A few examples of comments not in action, because they are ignored at runtime.
+document./* Coments are ignored during runtime.*/writeln("Coments won't mess up this code.");
+document.writeln('Puting coments in the middle of a line of code is not good practice'); // The end of the line is better.
+// document.writeln('This code will not show up because it has been commented out.');
+/*document.writeln('This is useful if you are temporarily removing code without deleting it.');*/
+</script>
+            </pre>
+        </div>
+    </section>
