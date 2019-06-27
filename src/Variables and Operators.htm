@@ -1,0 +1,212 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>6 Variables and Operators</title>
+    <style>
+        .var {
+            color: rgb(211, 43, 226);
+        }
+
+        #specialList hr {
+            width: 25%;
+            float: left;
+        }
+
+        #specialList .example {
+            margin-left: 1%;
+        }
+
+        .example {
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> 6 Variables and Operators </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Syntax.htm">5 Syntax</a>      <ins>Next:</ins> <a href = ".htm">6</a></pre>
+        </h4>
+        <hr>
+        <div class="navigatePage">
+            <h2> Topics </h2>
+            <ul>
+                <li><a href='#variables'> Variables</a></li>
+                <li><a href='#operators'>Operators</a></li>
+                <li><a href='#assignmentOps'>Assignment Operators</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <section id='variables'>
+        <h2> Variables </h2>
+        <p> Variables are used to store information. Variables are declared with the keyword <span
+                class='var'>var</span>.</p>
+        <div class='example'>
+            <pre>
+<span class='var'>var</span> x = 10 ;
+document.write(x);
+<hr>
+<script>
+    var x = 10;
+    document.write(x);
+</script>
+            <hr>
+            </pre>
+            <p>The value 10 is stored in x. x is a pointer to 10. So when document.write(x) is called, it is executed as
+                document.write(10);</p>
+
+        </div>
+    </section>
+    <section id='operators'>
+        <h2> JavaScript Operators </h2>
+        <dl style='list-style-type:circle;' style='width:50%; background-color:lightgrey;' id='specialList'>
+            <li> = &rarr; Assignment Operator</li>
+            <div class='example'>
+                <pre>
+var x = 5;
+var y = 10;
+x = y;
+document.write(x);
+<hr>
+                </pre>
+                <script>
+                    var x = 5; // 5 is stored in x
+                    var y = 10; // 10 is stored in y
+                    x = y; // y is stored in x
+                    document.write(x);
+                </script>
+                <hr><br>
+            </div>
+            <hr><br>
+
+            <li> + &rarr; Addition </li>
+            <div class='example'>
+                <pre>
+document.write(5 + 5);
+            <hr>
+        </pre>
+                <script>document.write(5 + 5);</script>
+            </div>
+            <hr><br>
+
+            <li> - &rarr; Subtraction</li>
+            <div class='example'>
+                <pre>
+document.write(10-5);
+<hr>
+<script>document.write(10 - 5)</script>
+                </pre>
+            </div>
+            <hr><br>
+
+            <li> * &rarr; Multiplication</li>
+            <div class='example'>
+                <pre>
+var x = 5 * 5;
+document.write(x);
+<hr>
+<script>var x = 5 * 5;
+    document.write(x);</script>
+</pre>
+            </div>
+            <hr><br>
+
+            <li> / &rarr; Division </li>
+            <div class='example'>
+                <pre>
+var x = 5 / 2;
+var y = 5 / 2.0;
+var z = 5.0 / 2;
+document.write(x + '&lt;br&gt;' + y + '&lt;br&gt;' + z);
+<hr>
+</pre>
+                <script>
+                    var x = 5 / 2;
+                    var y = 5 / 2.0;
+                    var z = 5.0 / 2;
+                    document.write(x + '<br>' + y + '<br>' + z);
+                </script>
+            </div>
+            <hr><br>
+            <li> ** &rarr; Exponential </li>
+            <div class='example'>
+                <pre>
+document.write( 5 ** 2 + '&lt;br&gt;');
+document.write( 10 ** 3 + '&lt;br&gt;');
+document.write( 4 ** 0.5 + '&lt;br&gt;');
+<hr>
+</pre>
+                <script>
+                    document.write(5 ** 2 + '<br>');
+                    document.write(10 ** 3 + '<br>');
+                    document.write(4 ** 0.5 + '<br>');
+
+                </script>
+            </div>
+            <li> % &rarr; Modulus </li>
+            <dd>Modulus is the remainder when dividing</dd>
+            <div class='example'>
+                <pre>
+document.write(5 % 2);
+document.write(20 % 3);
+document.write(88 % 2); // Using x % 2 is a good way to tell if a number is odd.
+<hr>
+</pre>
+                <script>
+                    document.write(5 % 2);
+                    document.write(20 % 3);
+                    document.write(88 % 2); // Using x % 2 is a good way to tell if a number is odd.
+                </script>
+            </div>
+            <li>++ &rarr; Increment </li>
+            <div class='example'>
+                <pre>
+var x = 5;
+x++; // x = x + 1;
+document.write(x);
+<hr>
+                </pre>
+                <script>
+                    var x = 5;
+                    x++; // x = x + 1;
+                    document.write(x);
+                </script>
+            </div>
+            <li>-- &rarr; Decrement </li>
+            <div class='example'>
+                <pre>
+var x = 5;
+x--; // x = x - 1;
+document.write(x);
+<hr>
+                </pre>
+                <script>
+                    var x = 5;
+                    x--; // x = x - 1;
+                    document.write(x);
+                </script>
+            </div>
+
+        </dl>
+    </section>
+    <section id='assignmentOps'>
+        <h2> Assignment Operators </h2>
+        <p> There are aditional assignment operators to manipulate variables that have already been asigned. </p>
+        <dl style='list-style-type:circle;' style='width:50%; background-color:lightgrey;' id='specialList'>
+            <li>x += y; &rarr; x = x + y;</li>
+            <li>x -= y; &rarr; x = x - y;</li>
+            <li>x *= y; &rarr; x = x * y;</li>
+            <li>x /= y; &rarr; x = x / y;</li>
+            <li>x %= y; &rarr; x = x % y;</li>
+        </dl>
+    </section>
+</body>
+
+</html>

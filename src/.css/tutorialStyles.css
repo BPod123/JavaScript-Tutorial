@@ -21,11 +21,13 @@ header h4 {
 }
 
 .navigatePage {
-    text-align: center;
-    list-style-position: inside;
+    /*text-align: center;
+    list-style-position: inside;*/
     background-color: black;
     color           : white;
 }
+.navigatePage h2    {text-align:center;}
+.navigatePage ul {margin-left:47%;}
 
 
 .navigatePage a:link {
@@ -48,11 +50,13 @@ header h4 {
     color:black;
     width:50%;
     overflow:auto;
+    padding-left:2px;
 }
 .example hr {
     width:50%;
     float:left;
 }
+
 h2 {
     text-decoration: underline;
     color          : yellow;
