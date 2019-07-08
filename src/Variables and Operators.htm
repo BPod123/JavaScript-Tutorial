@@ -31,7 +31,7 @@
     <header>
         <h1> 6 Variables and Operators </h1>
         <h4>
-            <pre><ins>Previous:</ins> <a href="Syntax.htm">5 Syntax</a>      <ins>Next:</ins> <a href = ".htm">6</a></pre>
+            <pre><ins>Previous:</ins> <a href="Syntax.htm">5 Syntax</a>      <ins>Next:</ins> <a href = "Functions.htm">7 Functions</a></pre>
         </h4>
         <hr>
         <div class="navigatePage">
@@ -40,6 +40,9 @@
                 <li><a href='#variables'> Variables</a></li>
                 <li><a href='#operators'>Operators</a></li>
                 <li><a href='#assignmentOps'>Assignment Operators</a></li>
+                <li><a href='#stringOps'>String Operators</a></li>
+                <li><a href='#logicalOps'>Boolean Operators</a></li>
+                <li><a href='#comparisonOps'>Comparison Operators</a></li>
             </ul>
             <hr>
         </div>
@@ -64,6 +67,7 @@ document.write(x);
 
         </div>
     </section>
+    <hr>
     <section id='operators'>
         <h2> JavaScript Operators </h2>
         <dl style='list-style-type:circle;' style='width:50%; background-color:lightgrey;' id='specialList'>
@@ -196,6 +200,7 @@ document.write(x);
 
         </dl>
     </section>
+    <hr>
     <section id='assignmentOps'>
         <h2> Assignment Operators </h2>
         <p> There are aditional assignment operators to manipulate variables that have already been asigned. </p>
@@ -205,6 +210,81 @@ document.write(x);
             <li>x *= y; &rarr; x = x * y;</li>
             <li>x /= y; &rarr; x = x / y;</li>
             <li>x %= y; &rarr; x = x % y;</li>
+        </dl>
+    </section>
+    <hr>
+    <section id='stringOps'>
+        <h2> String Operators </h2>
+        <dl style='list-style-type:circle;' style='background-color:lightgrey;'>
+            <li>+ &rarr; Contatonates two strings</li>
+            <li>+= &rarr; Sets a string equal to itself plus another string </li>
+            <div class='example' style='width:50%;'>
+                <pre>
+document.write('foo' + 'bar');
+document.write('&lt;br&gt;');
+var str = 'fizz';
+str += 'buzz';
+document.write(str);
+document.write('&lt;br&gt;');
+
+// JavaScript will automatically cast a string 
+    // to a number if there is a string in the statement
+document.write(20 + 5);
+document.write('&lt;br&gt;');
+document.write('20' + 5);
+document.write('&lt;br&gt;');
+document.write(20 + '5');
+<hr>
+                </pre>
+                <script>
+                    document.write('foo' + 'bar');
+                    document.write('<br>');
+                    var str = 'fizz';
+                    str += 'buzz';
+                    document.write(str);
+                    document.write('<br>;');
+                    // JavaScript will automatically cast a string to a number if there is a string in the statement
+                    document.write(20 + 5);
+                    document.write('<br>');
+                    document.write('20' + 5);
+                    document.write('<br>');
+                    document.write(20 + '5');
+                </script>
+            </div>
+        </dl>
+
+    </section>
+    <hr>
+    <section id='logicalOps'>
+        <h2> Boolean Operators </h2>
+        <dl style='list-style-type:circle;' style='width:50%; background-color:lightgrey;' id='specialList'>
+            <li> && &rarr; And Operator </li>
+            <dd> P && Q evaluates to true if and only if P and Q are true</dd>
+            <li> || &rarr; Or Operator </li>
+            <dd>P || Q evaluates to true if P is true or if Q is true</dd>
+            <li> ! &rarr; Not Operator </li>
+            <dd> !P is true if P is false</dd>
+            <dd> !Q if false if Q is true</dd>
+        </dl>
+    </section>
+    <hr>
+    <section id='comparisonOps'>
+        <h2> Comparison Operators </h2>
+        <p> Check out the tutorial on <a href='Comparisons.htm'> Comparisons </a></p>
+        <dl style='list-style-type:circle;' style='width:50%; background-color:lightgrey;' id='specialList'>
+            <li> == &rarr; Equals Operator </li>
+            <dd> P == Q evaluates to true if P is equal to Q </dd>
+            <li> === &rarr; Equal Value and Type </li>
+            <dd> P === Q evaluates to true if and only if P and Q have the same value and type </dd>
+            <li> != &rarr; Not Equals Operator </li>
+            <dd> Opposite of ==</dd>
+            <li> !== &rarr; Not Equal Value and Type</li>
+            <dd> Opposite of ===</dd>
+            <li> &gt; &rarr; Greater Than</li>
+            <li> &lt; &rarr; Less Than </li>
+            <li> &gt;= &rarr; Greater Than or Equal To</li>
+            <li> &lt;= &rarr; Less Than or Equal To</li>
+            <li> ? &rarr; Ternary Operator </li>
         </dl>
     </section>
 </body>

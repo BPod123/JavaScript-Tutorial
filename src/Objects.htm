@@ -1,0 +1,203 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>8 Objects</title>
+</head>
+
+<body>
+    <header>
+        <h1> 8 Objects </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Functions.htm">7 Functions</a>      <ins>Next:</ins> <a href = "Events.htm">9 Events</a></pre>
+        </h4>
+        <hr>
+        <div class="navigatePage">
+            <h2> Topics </h2>
+            <ul>
+                <li><a href='#oop'>Object Oriented Programming</a></li>
+                <li><a href='#constructors'>Constructors</a></li>
+                <li><a href='#functions'>Object Methods</a></li>
+                <li><a href='#printing'>Printing Methods</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <section id='#oop'>
+        <h2> Object Oriented Programming (OOP)</h2>
+        <p> In the real world, we don't think of all information as separate, unrelated strings and numbers. We like
+            to group things together. With Object Oriented Programming, you can store all of the information about
+            something in an object.<br>
+            For this example we will have a Person object. A Person has a first name, last name, and age.
+        </p>
+        <div class='example'>
+            <pre>
+var person = {
+    name: 'John',
+    surname: 'Doe',
+    age: 50
+};
+# You can access the information within the object with the '.' dot operator.
+document.write(person.name + person.surname + 'is ' + person.age + ' years old.')
+<hr>
+</pre>
+            <script>
+                var person = {
+                    name: 'John',
+                    surname: 'Doe',
+                    age: 50
+                };
+                document.write(person.name + person.surname + 'is ' + person.age + ' years old.')
+            </script>
+        </div>
+    </section>
+    <hr>
+    <section id='constructors'>
+        <h2> Constructors </h2>
+        <p> You can use a function to return an object for you with passed in values. If you are making multiple
+            instances of a particular object, this will save you code to write.</p>
+        <div class='example'>
+            <pre>
+function Automobile(makeIn, modelIn, yearIn, colorIn) {
+    var automobile = { make: makeIn, model: modelIn, year: yearIn, color: colorIn };
+    return automobile
+}
+<hr>
+// You can declare variables as objects with the 'new' keyword
+var car = new Automobile('Ford', 'Mustang', 2019, 'red');
+
+document.write('car: ' + car.color + ' ' + car.year + ' ' + car.make + ' ' + car.model);
+document.write('&lt;br&gt;');
+var sports = new Automobile('DeLorean', 'VIN 16817', 1983);
+document.write('sports: ' + sports.color + ' ' + sports.year + ' ' + sports.make + ' ' + sports.model);
+<hr>
+            </pre>
+
+            <script>
+                function Automobile(makeIn, modelIn, yearIn, colorIn) {
+                    var automobile = { make: makeIn, model: modelIn, year: yearIn, color: colorIn };
+                    return automobile
+                }
+                var car = new Automobile('Ford', 'Mustang', 2019, 'red');
+                document.write('car: ' + car.color + ' ' + car.year + ' ' + car.make + ' ' + car.model);
+                document.write('<br>');
+                var sports = new Automobile('DeLorean', 'VIN 16817', 1983);
+                document.write('sports: ' + sports.color + ' ' + sports.year + ' ' + sports.make + ' ' + sports.model);
+            </script>
+
+        </div>
+    </section>
+    <hr>
+    <section id='functions'>
+        <h2>Object Methods</h2>
+        <p>In the declaration of an ojbect, you can define a function specific to that object, also called a method. In
+            the method, you can access the attributes of the object with 'this.property' as shown below.</p>
+        <div class='example'>
+            <pre>
+function Player(nameIn, levelIn) {
+    var player = {
+        name: nameIn,
+        level: levelIn,
+        levelUp: function () {
+            this.level++;
+            document.write(this.name + ' has leveled up.&lt;br&gt;');
+        },
+        setLevel: function (level) {
+            document.write(this.name + "'s level has changed from " + this.level + ' to ' + level +
+                '.&lt;br&gt;');
+            this.level = level;
+        },
+        linkGitHub: function () {
+            document.write("&lt;p&gt;&lt;a href='https://github.com/BPod123'>My Github&lt;/a&gt;&lt;br&gt;&lt;/p&gt;")
+        },
+        toString: function () {
+            return this.name + ' is level ' + this.level + '.';
+        }
+    };
+    return player;
+}
+<hr>
+var gamer = new Player('Ben Podrazhansky', 100);
+gamer.linkGitHub();
+document.write()
+gamer.toString();
+document.write('&lt;br&gt;');
+
+gamer.levelUp();
+gamer.toString();
+document.write('&lt;br&gt;');
+
+gamer.setLevel(1000);
+document.write(gamer.toString());
+<hr>
+            </pre>
+            <script>
+                function Player(nameIn, levelIn) {
+                    var player = {
+                        name: nameIn,
+                        level: levelIn,
+                        levelUp: function () {
+                            this.level++;
+                            document.write(this.name + ' has leveled up.<br>');
+                        },
+                        setLevel: function (level) {
+                            document.write(this.name + "'s level has changed from " + this.level + ' to ' + level +
+                                '.<br>');
+                            this.level = level;
+
+                        },
+                        linkGitHub: function () {
+                            document.write("<p><a href='https://github.com/BPod123'>My Github</a><br></p>")
+                        },
+                        toString: function () {
+                            return this.name + ' is level ' + this.level + '.';
+                        }
+                    };
+                    return player;
+                }
+                // You can declare variables as objects with the 'new' keyword
+                var gamer = new Player('Ben Podrazhansky', 100);
+                gamer.linkGitHub();
+                document.write()
+                gamer.toString();
+                document.write('<br>');
+
+                gamer.levelUp();
+                gamer.toString();
+                document.write('<br>');
+
+                gamer.setLevel(1000);
+                document.write(gamer.toString());
+            </script>
+        </div>
+    </section>
+    <hr>
+    <section id='printing'>
+        <h2>Printing Methods</h2>
+        <p> The code within a funcition or method can be printed by calling the function or method without parentheses
+            '()'. See the below with the Player object from the previous example.</p>
+        <div class='example'>
+            <pre>
+                <code>
+var adventurer = new Player('Dovakin', 81.5);
+document.write(adventurer.toString);
+document.write('&lt;br&gt;'+adventurer.toString());
+</code>
+<hr>
+</pre>
+            <script>
+                var adventurer = new Player('Dovakin', 81.5);
+                document.write(adventurer.toString);
+                document.write('<br>'+adventurer.toString());
+
+
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

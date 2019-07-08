@@ -1,0 +1,146 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>7 Functions</title>
+    <script>
+        function myFunction(a, b) {
+            document.write(a + b);
+        }
+        function myFunction2() {
+            document.write(test);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1> 7 Functions </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Variables and Operators.htm">6 Variables and Operators</a>      <ins>Next:</ins> <a href = "Objects.htm">8 Objects</a></pre>
+        </h4>
+        <hr>
+        <div class="navigatePage">
+            <h2> Topics </h2>
+            <ul>
+                <li><a href='#funcDef'> Definition of a Function </a></li>
+                <li><a href='#calls'> Invoking Functions </a></li>
+                <li><a href='#returns'>Return Values</a></li>
+                <li><a href='#localVariables'> Local Variables </a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <section id='funcDef'>
+        <h2> Functions </h2>
+        <p> Functions are pieces of code that can be used multiple times from anywhere in a program. What is great about
+            a function is that it lets you write less code.</p>
+        <div class='example'>
+            <pre>
+Functions are in the declared in the following format:
+<h3>function myFunction(parameter1, parameter2, ... parameterN) {
+        code
+    }
+</h3>
+<hr style='width:100%;'>
+function myFunction(a, b){
+    document.write(a + b);
+}
+function myFunction2(){
+    document.write('test');
+}
+        </pre>
+        </div>
+    </section>
+    <hr>
+    <section id='calls'>
+        <h2> Invoking Functinons </h2>
+        <p> Invoking functions or calling functions is how you use the code within a function.</p>
+        <div class='example'>
+            <pre>
+var x = 10;
+var y = 15;
+myFunction(x, y);
+document.write('&lt;br&gt;');
+myFunction2();
+<hr>
+</pre>
+            <script>
+                var x = 10;
+                var y = 15;
+                myFunction(x, y);
+                document.write('<br>');
+                myFunction2();
+            </script>
+        </div>
+    </section>
+    <section id='returns'>
+        <h2> Return Values </h2>
+        <p> With the keyword <mark>return</mark>, you can have a function return a value. With this, you can treat a
+            function as a variable.</p>
+        <div class='example'>
+            <pre>
+                    function sum(a, b) {
+                        return a + b;
+                    }
+                    function difference(a, b) {
+                        return a - b;
+                    }
+document.write(sum(5, 6));
+
+document.write('&lt;br&gt;');
+var x = sum(5, '6');
+document.write(x);
+document.write('&lt;br&gt;');
+document.write( 10 + difference(5, 6));
+<hr>
+</pre>
+            <script>
+                function sum(a, b) {
+                    return a + b;
+                }
+                function difference(a, b) {
+                    return a - b;
+                }
+                document.write(sum(5, 6));
+                document.write('<br>');
+                var x = sum(5, '6');
+                document.write(x);
+                document.write('<br>');
+                document.write(10 + difference(5, 6));
+            </script>
+        </div>
+    </section>
+    <section id='localVariables'>
+        <h2> Local Variables and Scope </h2>
+        <p> All variable are defined within a scope, meaning that a variable defined in a function, only exists within
+            that function. </p>
+        <div class = 'example'>
+<pre>
+function example(){
+    var z = 10;
+    document.write(z);
+    document.write('&lt;br&gt;');
+}
+example(); // This will print because z is defined in the example()
+document.write(z); // This will not print because z has not been defined.
+<hr>
+</pre>
+<script>
+function example(){
+    var z = 10;
+    document.write(z);
+    document.write('<br>');
+}
+example();
+document.write(z); // This will not print because z has not been defined.
+</script>
+        </div>
+    </section>
+</body>
+
+</html>
