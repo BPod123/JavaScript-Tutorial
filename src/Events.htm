@@ -1,0 +1,90 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>9 Events</title>
+</head>
+
+<body>
+    <header>
+        <h1> 9 Events </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Objects.htm">8 Objects</a>      <ins>Next:</ins> <a href = ".htm">10</a></pre>
+        </h4>
+        <hr>
+        <div class="navigatePage">
+            <h2> Topics </h2>
+            <ul>
+                <li><a href='#eventDef'>What is an Event?</a></li>
+                <li><a href='#eventTypes'>Useful Event Types</a></li>
+                <li><a href='#usingEvents'>Event Examples</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <section id='eventDef'>
+        <h2> What is an Event? </h2>
+        <p> An event is something that happens. In the context of JavaScript and web pages, an event can be when a
+            button is clicked, a key is pressed, or when an HTML elements changes. You can set an event as an attribute
+            of an HTML element.</p>
+    </section>
+    <section id='eventTypes'>
+        <h2>Useful Event Types</h2>
+        <dl>
+            <dt>onchange</dt>
+            <dd>When an element is changed</dd>
+            <dt>onclick</dt>
+            <dd>When an element is clicked</dd>
+            <dt>onmouseover</dt>
+            <dd>When the mouse hovers over an element</dd>
+            <dt>onmouseout</dt>
+            <dd>When the mouse moves off of an element</dd>
+            <dt>onkeydown</dt>
+            <dd>When the user presses a key</dd>
+            <dt>onload</dt>
+            <dd>When the page is loaded by the browser</dd>
+        </dl>
+    </section>
+    <section id='usingEvents'>
+        <h2>Event Examples</h2>
+        <div class='example' style= 'width:75%;'>
+            <pre>
+&lt;p id='ex1' onmouseout="document.getElementById('ex1').style.color = 'blue'"
+onmouseover="document.getElementById('ex1').style.color = 'green'"&gt;This element will turn green when the
+mouse hovers over it and blue when the mouse moves off of it.&lt;/p&gt;
+
+&lt;p id='ex3' onload="document.getElementById('ex1').style.color = 'red'"
+onclick="document.getElementById('ex1').style.fontSize = '200%'"&gt;Clicking this paragraph will
+make the top paragraph 2x its normal size.&lt;/p&gt;
+&lt;button onclick="reset()"&gt;Reset Examples&lt;/button&gt;
+&lt;script&gt;
+function reset() {
+    document.getElementById('ex1').style.color = 'black';
+    document.getElementById('ex1').style.fontSize = '100%';
+}
+&lt;/script&gt;
+            <hr>
+            </pre> 
+            <p id='ex1' onmouseout="document.getElementById('ex1').style.color = 'blue'"
+                onmouseover="document.getElementById('ex1').style.color = 'green'">This element will turn green when the
+                mouse hovers over it and blue when the mouse moves off of it.</p>
+
+            <p id='ex3' onload="document.getElementById('ex1').style.color = 'red'"
+                onclick="document.getElementById('ex1').style.fontSize = '200%'">Clicking this paragraph will
+                make the top paragraph 2x its normal size.</p>
+            <button onclick="reset()">Reset Examples</button>
+            <script>
+                function reset() {
+                    document.getElementById('ex1').style.color = 'black';
+                    document.getElementById('ex1').style.fontSize = '100%';
+                }
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>
