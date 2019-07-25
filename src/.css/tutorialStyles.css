@@ -29,18 +29,6 @@ header h4 {
 .navigatePage h2    {text-align:center;}
 .navigatePage ul {margin-left:47%;}
 
-
-.navigatePage a:link {
-    color: blue;
-}
-
-.navigatePage a:hover {
-    color: green;
-}
-.navigatePage a:visited {
-    color: purple;
-}
-
 /*.navigatePage h2 {
     color     : black;
     text-align: center;
@@ -52,10 +40,10 @@ header h4 {
     overflow:auto;
     padding-left:2px;
 }
-.example hr {
+/*.example hr {
     width:50%;
     float:left;
-}
+}*/
 
 h2 {
     text-decoration: underline;
@@ -65,6 +53,7 @@ h2 {
 table,
 th,
 td {
+    border: 1px solid white;
     border-collapse: collapse;
 }
 

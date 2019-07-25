@@ -1,0 +1,68 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta name="author" content="Ben Podrazhansky">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            border: none;
+        }
+
+        a {
+            font-size: 90%;
+        }
+
+        button {
+            border: none;
+            background-color: inherit;
+
+        }
+
+        #tableOfContents {
+            width: 10%;
+        }
+
+        #tutorialViewer {
+            width: 90%;
+        }
+
+        @media screen and (max-width:800px) {
+            #tableOfContents, #tutorialViewer {
+                width:100%;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h2 style="text-decoration: underline;"> JavaScript Tutorial </h2>
+    </header>
+    <aside style="float:left; text-align:left; border: 1px solid white">
+        <ul style="list-style-type: none;">
+            <li><button onclick='document.getElementById("tutorialView").src = "Change HTML Elements.htm"'>1 Change HTML
+                    Elements</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Where to Place JS.htm"'>2 Where to Place
+                    JS </button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Outputs.htm"'>3 Outputs</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Statements.htm"'>4 Statements</button>
+            </li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Syntax.htm"'>5 Syntax</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Variables and Operators.htm"'>6
+                    Variables and Operators</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Functions.htm"'>7 Functions</button>
+            </li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Objects.htm"'>8 Objects</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Events.htm"'>9 Events</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "Strings.htm"'>10 Strings</button></li>
+            <li><button onclick='document.getElementById("tutorialView").src = "StringMethods.htm"'>11 String
+                    Methods</button>
+        </ul>
+    </aside>
+    <iframe id='tutorialViewer' src='Change HTML Elements.htm'></iframe>
+</body>
+
+</html>

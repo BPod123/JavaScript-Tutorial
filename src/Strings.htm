@@ -1,0 +1,270 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="author" content="Ben Podrazhansky">
+    <title>10 Strings</title>
+    <style>
+        td {
+            text-align: center;
+            background-color: rgb(95, 92, 92);
+            color: white;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .example td {
+            text-align: none;
+            border: 1px solid black;
+            border-color: black;
+        }
+
+        .example td hr {
+            width: 50%;
+        }
+
+        .example {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> 10 Strings </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Events.htm">9 Events</a>      <ins>Next:</ins> <a href = "StringMethods.htm">11 String Methods</a></pre>
+        </h4>
+        <hr>
+        <div class="navigatePage">
+            <h2> Topics </h2>
+            <ul>
+                <li><a href='#def'> Definition and Declaration </a></li>
+                <li><a href='#escapeSequences'> Escape Sequences</a></li>
+                <li><a href='#multiLineStrings'> Multi-Line Strings in Code</a></li>
+                <li><a href='#stringObjects'> String Objects</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <section id='def'>
+        <h2> Definition and Declaration </h2>
+        <p> A string is a sequence of characters. In JavaScript, a string can be both a data type and an <a
+                href='#stringObjects'>object</a>. Generally you would want to avoid string objects because they make
+            execution of programs slower. Strings can be declared with single quotes ' ' or double quotes " ".</p>
+        <div class='example'>
+            <pre>
+var string1 = 'This is a string.';
+var string2 = "This is also a string.";
+document.write(string1);
+document.write('&lt;br&gt;');
+document.write(string2);
+            <hr>
+            </pre>
+            <script>
+                var string1 = 'This is a string.';
+                var string2 = "This is also a string.";
+                document.write(string1);
+                document.write('<br>');
+                document.write(string2);
+            </script>
+        </div>
+        <p>Using single or double quotes can be usefull if you want a string inside of a string
+            <sub>(stringception)</sub> as with inline JavaScript.</p>
+        <div class='example'>
+            <pre>
+&lt;p id='ex1'&gt; Original Text &lt;/p&gt;
+&lt; button onclick='document.getElementById("ex1").innerHTML = "This is an example of when using single and double quotes together is useful."'&gt; Change Text &lt;/button&gt;
+&lt;button onclick='document.getElementById("ex1").innerHTML = "Original Text"'&gt; Reset Text &lt;/button&gt;
+<hr>
+            </pre>
+            <p id='ex1'> Original Text </p>
+
+            <button
+                onclick='document.getElementById("ex1").innerHTML = "This is an example of when using single and double quotes together is useful."'>
+                Change Text </button>
+
+            <button onclick='document.getElementById("ex1").innerHTML = "Original Text"'> Reset Text </button>
+        </div>
+    </section>
+    <hr>
+    <section id='escapeSequences'>
+        <h2>Escape Sequences</h2>
+        <p> What happens when you want to add a single quote or double quote to a string? What if you want to have a
+            string take up multiple lines or have indentations? That is where escape sequences come in. Here are some
+            examples of escape sequences in action </p>
+        <table style='width:100%;'>
+            <tr>
+                <th>Result in String</th>
+                <th>Code</th>
+                <th>Example</th>
+            </tr>
+            <tr>
+                <td>'</td>
+                <td>\'</td>
+                <td class='example'>
+                    document.write(' \' ');
+                    <hr>
+
+                    <script>
+                        document.write(' \' ');
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>"</td>
+                <td>\"</td>
+                <td class='example'>document.write(" \" ");
+                    <hr>
+                    <script>
+                        document.write(" \" ");</script>
+                </td>
+            </tr>
+            <tr>
+                <td>\</td>
+                <td>\\</td>
+                <td class='example'>document.write(' \\ ');
+                    <hr>
+                    <script>document.write(' \\ ');</script>
+                </td>
+            </tr>
+        </table>
+        <h3>Control Characters</h3>
+        <p> Control characters are characters that don't take up text. Control characters do things like add new lines
+            or indentations in strings. You can read more information about control characters <a
+                href='https://en.wikipedia.org/wiki/Control_character'>here</a>.</p>
+        <p>View the console logs with function F12.</p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Definition</th>
+                <th>Code</th>
+                <th>Executed Example found in console log</th>
+            </tr>
+            <tr>
+                <td>Horizontal Tab</td>
+                <td>Functions the same as the 'Tab' key.</td>
+                <td>\t</td>
+                <td class='example'>
+                    console.log('Horizontal Tab: This\tis\ta\ttest.');
+                    <script>console.log('Horizontal Tab: This\tis\ta\ttest.');</script>
+                </td>
+            </tr>
+            <tr>
+                <td>New Line</td>
+                <td>Places a line break in the string</td>
+                <td>\n</td>
+                <td class='example'>console.log('New Line: This\nis\na\ntest.);
+                    <script>console.log('New Line: This\nis\na\ntest.');</script>
+                </td>
+            </tr>
+        </table>
+        <p> The following control characters are for controlling printers and examples cannot be viewed on computers.
+        </p>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Definition</th>
+                <th>Code</th>
+            </tr>
+            <tr>
+                <td>Backspace</td>
+                <td>Will cause the printer to print over the prevoius character.</td>
+                <td>\b</td>
+
+            </tr>
+            <tr>
+                <td>Form Feed</td>
+                <td>Will tell the printer to jump to the top of the next page.</td>
+                <td>\f</td>
+            </tr>
+            <tr>
+                <td>Carriage Return</td>
+                <td>Tells the printer to return to the beginning of the line, will cause over printing.</td>
+                <td>\r</td>
+            </tr>
+            <tr>
+                <td>Vertical Tab</td>
+                <td> Tab that puts vertcal space within strings.</td>
+                <td>\v</td>
+            </tr>
+        </table>
+    </section>
+    <hr>
+    <section id='multiLineStrings'>
+        <h2>Multi-Line Strings in Code</h2>
+        <p> What if you are writing a long string and you don't want to have one line that is 300 characters long? That
+            is where multi-line strings come in.</p>
+        <div class='example'>
+            <p> All of the following examples are valid lines statements.</p>
+            <hr>
+            <pre>
+&lt;p id='statement1'&gt; Paragraph &lt;/p&gt;
+document.getElementById('statement1').innerHTML = 
+"This string is on the next line.";
+
+document.write("This string can be extended to the next line with a \
+ backslash in the string.");
+ <hr>
+</pre>
+            <p id='statement1'>Paragraph </p>
+            <script>
+                document.getElementById('statement1').innerHTML =
+                    "This string is on the next line.";
+
+                document.write("This string can be extended to the next line with a \
+ backslash in the string.");</script>
+
+        </div>
+    </section>
+    <hr>
+    <section id='stringObjects'>
+        <h2> String Objects </h2>
+        <p> Strings can be declared as objects with the function:</p>
+        <div class='example'>
+            <p>var str = new String("This is a String");</p>
+        </div>
+        <h3>Using <a href='Variables and Operators.htm#comparisonOps'>comparison operators</a> with String objects</h3>
+        <p> The <a href='Variables and Operators.htm#comparisonOps'>== operator</a> returns true if a two values are
+            equal, reguardless of type.</p>
+        <div class='example'>
+            <pre>
+var s1 = 'This is a string.';
+var s2 = new String('This is a string.');
+var s3 = 'This is also a string.';
+document.write('\'' + s1 + '\' == ' + '\'' + s2 + '\':\t' + (s1 == s2) + '&lt;br&gt;');
+document.write('\'' + s1 + '\'' + ' == \'' + s3 + '\':\t' + (s1 == s3) + '&lt;br&gt;');
+<hr>
+</pre>
+            <script>
+                var s1 = 'This is a string.';
+                var s2 = new String('This is a string.');
+                var s3 = 'This is also a string.';
+                document.write('\'' + s1 + '\' == ' + '\'' + s2 + '\':\t' + (s1 == s2) + '<br>');
+                document.write('\'' + s1 + '\'' + ' == \'' + s3 + '\':\t' + (s1 == s3) + '<br>');
+            </script>
+        </div>
+        <p> The <a href='Variables and Operators.htm#comparisonOps'>=== operator</a> returns true if two variables have
+            equal value and type.</p>
+        <div class='example'>
+            <pre>
+var s1 = 'This is a string.';
+var s2 = new String('This is a string.');
+document.write('\'' + s1 + '\' === \'' + s2 + '\':' + (s1 === s2));
+<hr>
+</pre>
+            <script>
+                var s1 = 'This is a string.';
+                var s2 = new String('This is a string.');
+                document.write('\'' + s1 + '\' === \'' + s2 + '\':' + (s1 === s2));
+            </script>
+        </div>
+    </section>
+</body>
+
+</html>

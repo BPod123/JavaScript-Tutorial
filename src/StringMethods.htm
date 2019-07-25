@@ -1,0 +1,380 @@
+<!-- Ben Podrazhansky -->
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta name="author" content="Ben Podrazhansky">
+    <link rel="stylesheet" href=".css/tutorialStyles.css">
+    <link rel="stylesheet" href=".css/darkTheme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='.js/TutorialUtilities.js'></script>
+    <title>11 String Methods</title>
+    <style>
+        .example leftSide {
+            float: left;
+            border-right: 3px solid black;
+        }
+
+        .example rightSide {
+            float: left;
+            margin-left: 5px;
+        }
+
+        @media screen and (max-width:200px) {
+
+            leftSide,
+            rightSide {
+                width: 100%;
+                border: 1px solid black;
+            }
+        }
+
+        .example {
+            width: 51%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1> 11 String Methods </h1>
+        <h4>
+            <pre><ins>Previous:</ins> <a href="Strings.htm">10 Strings</a>      <ins>Next:</ins> <a href = ".htm">12 </a></pre>
+        </h4>
+        <hr>
+        <div class="navigatePage">
+            <h2> Topics </h2>
+            <ul>
+                <li><a href='#length'>String Length</a></li>
+                <li><a href='#stringception'>Finding Substrings in Strings</a></li>
+                <li><a href='#search'>Searching Strings</a></li>
+                <li><a href='#substrings'>Substrings</a></li>
+                <li><a href='#replace'>Replacing Segments of Strings</a></li>
+                <li><a href='#case'>Change Case</a></li>
+                <li><a href='#concat'>Connecting Strings</a></li>
+                <li><a href='#trim'>Trimming Strings</a></li>
+            </ul>
+            <hr>
+        </div>
+    </header>
+    <section id='#length'>
+        <h2> String Length </h2>
+        <p> Find the amount of characters in a string with the length property of a string. </p>
+        <div class='example'>
+            <pre>
+var string = 'This string has 30 characters.'
+var length = string.length;
+document.write('Length = ' + length);
+<hr>
+</pre>
+            <script>
+                var string = 'This string has 30 characters.'
+                var length = string.length;
+                document.write('Length = ' + length);
+            </script>
+        </div>
+    </section>
+    <hr>
+    <section id='stringception'>
+        <h2>Finding Substrings in Strings</h2>
+        <p> Use the indexOf() method to find the location of the first appearence of a substring within a string. Note
+            that strings start at index 0.</p>
+        <div class='example'>
+            <pre>
+var string = 'This string is a string';
+document.write(string.indexOf('string') + '&lt;br&gt;');
+document.write(string.indexOf('This') + '&lt;br&gt;');
+
+// If a substring is not in a string, the indexOf() method will return -1.
+document.write(string.indexOf('This string does not appear in the previously declared string \
+and will return -1.'));
+<hr>
+</pre>
+            <script>
+                var string = 'This string is a string';
+                document.write(string.indexOf('string') + '<br>');
+                document.write(string.indexOf('This') + '<br>');
+
+                // If a substring is not in a string, the indexOf() method will return -1.
+                document.write(string.indexOf('This string does not appear in the previously declared string \
+and will return -1.'));
+            </script>
+        </div>
+        <p> You can use lastIndexOf() to find the last index of a substring within a string.</p>
+        <div class='example'>
+            <pre>
+document.write("Test Test".indexOf('Test'));
+document.write('&lt;br&gt;');
+document.write("Test Test".lastIndexOf('Test'));
+<hr>
+</pre>
+            <script>
+                document.write("Test Test".indexOf('Test'));
+                document.write('<br>');
+                document.write("Test Test".lastIndexOf('Test'));
+            </script>
+        </div>
+        <p> For the indexOf() and lastIndexOf() methods, you can set the starting point of the search as a second
+            parameter.</p>
+        <div class='example'>
+
+
+            <pre>var string = 'Test Test Test';
+document.write(string.indexOf('Test') +  '&lt;br&gt;');
+document.write(string.indexOf('Test', 1) + '&lt;br&gt;');
+document.write(string.indexOf('Test', 11) +'&lt;br&gt;
+// The lastIndexOf() method searchs from end to beginning.
+// Adding a starting parameter sets the right bound for the search.
+document.write(string.lastIndexOf('Test', 9));
+<hr>
+            </pre>
+
+
+            <script>
+                var string = 'Test Test Test';
+                document.write(string.indexOf('Test') + '<br>');
+                document.write(string.indexOf('Test', 1) + '<br>');
+                document.write(string.indexOf('Test', 11) + '<br>');
+                // The lastIndexOf() method searchs from end to beginning.
+                // Adding a starting parameter sets the right bound for the search.
+                document.write(string.lastIndexOf('Test', 9));
+            </script>
+
+
+        </div>
+    </section>
+    <hr>
+    <section id='search'>
+        <h2> Searching Strings </h2>
+        <p> The search() method searches a string for a substring.</p>
+        <div class='example'>
+            <pre>var string = 'This is a test. This is a test.';
+document.write(string.search('This is a '));
+<hr></pre>
+            <script>
+                var string = 'This is a test. This is a test.';
+                document.write(string.search('This is a '));
+            </script>
+        </div>
+        <h2> search() vs indexOf()</h2>
+        <p>The seach() and indexOf() methods appear to be the same, but there are some key difference that make one
+            preferencial over another.</p>
+        <ul>
+            <li>indexOf()</li>
+            <dd> <span style='color:rgb(24, 240, 24);'>Can have a second argument for starting index of search.</span>
+            </dd>
+            <dd><span style='color:red;'>Can not take Regular Expressions (RegEx) as search values.</span></dd>
+            <li>search()</li>
+            <dd style='color:rgb(24, 240, 24);'>Can take Regular Expressions as search values. </dd>
+            <dd style='color:red;'>Can not take a separate parameter as the starting index of the search.</dd>
+        </ul>
+    </section>
+    <hr>
+    <section id='substrings'>
+        <h2>Substrings</h2>
+        <p> You can access smaller sections of strings called substrings with three different methods:</p>
+        <ul>
+            <li>slice(start, end)</li>
+            <li>substring(start, end)</li>
+            <li>substr(start, length)</li>
+        </ul>
+        <h3>slice(start, end)</h3>
+        <p>Takes a substring from a starting index to and not including an end index. The index can be positibe or
+            negative.</p>
+        <div class='example'>
+            <pre>var string = '0123456789';
+var slice = string.slice(0,2);
+document.write(slice);<hr></pre>
+            <script>
+                var string = '0123456789';
+                var slice = string.slice(0, 2);
+                document.write(slice);
+            </script>
+            <hr>
+
+            <pre>// Using negative integers in the parameters, n, will be interpreted as: string.length - |n|
+slice = string.slice(-3,-1); // This takes the 3rd index from the end up to the last index
+document.write(slice);<hr></pre>
+            <script>
+                slice = string.slice(-3, -1); // This takes the 3rd index from the end up to the last index
+                document.write(slice);
+            </script>
+            <hr>
+
+            <pre>// Using just the start parameter will return the rest of the string starting at that index
+document.writeln(string.slice(2));
+document.write(string.slice(-6));<hr>
+<script>document.writeln(string.slice(2));
+    document.write(string.slice(-6))</script></pre>
+        </div>
+
+        <h3> substring(start, end)</h3>
+        <p> substring() is the same as slice() in every way except, for that substring() cannot except negative
+            values in the parameters.</p>
+        <div class='example'>
+            <pre>var string = '0123456789';
+document.writeln(string.substring(2,8));
+document.write(string.substring(5));
+<hr>
+<script>
+    var string = '0123456789';
+    document.writeln(string.substring(2, 8));
+    document.write(string.substring(5));</script>
+</pre>
+        </div>
+        <h3>substr(start, length)</h3>
+        <p> substr(start, length) returns a substring starting at the start index and going to the length indecies away.
+            If the start parameter is negative, it will take that index from the end.
+        </p>
+        <div class='example'>
+            <pre>var string = '0123456789';
+document.writeln(string.substr(5, 3));
+document.writeln(string.substr(-3, 2));
+document.writeln(string.substr(-5));
+document.writeln(string.substr(4));
+<hr><script>
+    var string = '0123456789';
+    document.writeln(string.substr(5, 3));
+    document.writeln(string.substr(-3, 2));
+    document.writeln(string.substr(-5));
+    document.writeln(string.substr(4));</script>
+</pre>
+        </div>
+    </section>
+    <hr>
+    <section id='replace'>
+        <h2> Replacing Segments of Strings</h2>
+        <p> The replace(substring, newSubstring) returns a new string with a substring replaced by a new substring.</p>
+        <div class='example'>
+
+            <pre>
+&lt;p id='example1'&gt;foo foo foo&lt;/p&gt;
+&lt;button onClick='replace_foo_bar()'&gt; replace 'foo' with 'bar' &lt;/button&gt;
+&lt;button onClick='resetExample()'&gt; resetExample() &lt;/button&gt;
+                <hr>
+function replace_foo_with_bar() {
+    var string = document.getElementById('example1').innerHTML;
+    var newString = string.replace('foo', 'bar');
+    document.getElementById('example1').innerHTML = newString;
+}
+function resetExample(){
+    document.getElementById('example1').innerHTML = 'foo foo foo';
+}
+<script>
+    function replace_foo_with_bar() {
+        var string = document.getElementById('example1').innerHTML;
+        var newString = string.replace('foo', 'bar');
+        document.getElementById('example1').innerHTML = newString;
+    }
+    function resetExample() {
+        document.getElementById('example1').innerHTML = 'foo foo foo';
+    }
+</script>
+<hr>
+<p id='example1'>foo foo foo</p>
+<button onClick='replace_foo_with_bar()'>replace 'foo' with 'bar'  </button>
+<button onClick='resetExample()'>resetExample() </button>
+</pre>
+        </div>
+    </section>
+    <hr>
+    <section id='case'>
+        <h2>Change Case of Strings</h2>
+        <p> With the toUpperCase() and toLowerCase methods, you can change the case of string characters.</p>
+        <div class='example'>
+            <pre>document.writeln('foo bar'.toUpperCase());
+document.write('FOO BAR'.toLowerCase());
+<hr><script>
+    document.writeln('foo bar'.toUpperCase());
+    document.write('FOO BAR'.toLowerCase());
+</script></pre>
+        </div>
+    </section>
+    <hr>
+    <section id='concat'>
+        <h2>Connecting Strings</h2>
+        <p> Strings can be combined efficiently with the concat() method. Concat is short for concatonate which means to
+            connect. The concat() method does not change strings, but returns a new string.</p>
+        <div class='example'>
+            <pre>
+var s1 = 'This is a ';
+var s2 = 'test.';
+var s3 = s1.concat(s2);
+document.write(s3);
+<hr>
+</pre>
+            <script>
+                var s1 = 'This is a ';
+                var s2 = 'test.';
+                var s3 = s1.concat(s2);
+                document.write(s3);
+            </script>
+        </div>
+    </section>
+    <hr>
+    <section id='trim'>
+        <h2>Trim whitespace from the ends of strings</h2>
+        <p>The trim() method returns a new string without trailing spaces on the ends.</p>
+        <div class='example'>
+            <pre>
+var s1 = '      THIS    IS  A   TEST    ';
+var s2 = s1.trim();
+document.writeln('\'' + s1 + '\'');
+document.writeln('\'' + s2 + '\'');
+<hr>
+<script>
+    var s1 = '      THIS    IS  A   TEST    ';
+    var s2 = s1.trim();
+    document.writeln('\'' + s1 + '\'');
+    document.writeln('\'' + s2 + '\'');
+</script>
+</pre>
+
+        </div>
+    </section>
+    <hr>
+    <section id='charAt'>
+        <h2>Finding Characters at an Index</h2>
+        <p> The charAt() and charCodeAt() methods return a character at a specific index.</p>
+        <dl>
+            <dt>String.charAt(index)</dt>
+            <dd>Retuns the character at the passed in index or nothing if the index is out of bounds</dd>
+            <dt>String.charCodeAt(index)</dt>
+            <dd>Returns the ASCII code for the character at the passed in index of 'NAN', Not A Number, if the index is out of bounds or the character is not on the table</dd>
+
+        </dl>
+        <div class='example'>
+            <pre>
+var s1 = 'This is a test.';
+// Get the character at a specific index
+var c1 = s1.charAt(3); // 's'
+var c2 = s1.charAt(100); // This index is out  of bounds
+
+// Get the ASCII code for the character at a specific index
+var i1 = s1.charCodeAt(3); //  115
+var i2 = s1.charCodeAt(100); // This index is out of bounds
+document.writeln('c1:\t' + c1 + '\n' + 
+                 'c2:\t' + c2 + '\n' +  
+                 'i1:\t' + i1 + '\n' + 
+                 'i2:\t' + i2);
+                 <hr>
+<script>
+    var s1 = 'This is a test.';
+    // Get the character at a specific index
+    var c1 = s1.charAt(3); // 's'
+    var c2 = s1.charAt(100); // This index is out  of bounds
+
+    // Get the ASCII code for the character at a specific index
+    var i1 = s1.charCodeAt(3); //  115
+    var i2 = s1.charCodeAt(100); // This index is out of bounds
+    document.writeln('c1:\t' + c1 + '\n' +
+        'c2:\'' + c2 + '\'\n' +
+        'i1:\'' + i1 + '\n' +
+        'i2:' + i2);
+</script>
+</pre>
+        </div>
+    </section>
+</body>
+
+</html>
